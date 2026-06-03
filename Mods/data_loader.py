@@ -283,8 +283,7 @@ def load_folder(path: str) -> Tuple[str, Dict[str, pl.DataFrame]]:
     if not root.exists():
         raise FileNotFoundError(f"Path does not exist: {path}")
 
-    print(f"
-Scanning: {root}")
+    print(f"\nScanning: {root}")
     all_files = _list_files(root)
     print(f"  {len(all_files)} file(s) found")
 

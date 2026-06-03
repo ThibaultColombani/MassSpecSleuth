@@ -124,7 +124,7 @@ function resetRenames() {
 }
 
 async function saveHTML() {
-  let html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  let html = '<!DOCTYPE html>\\n' + document.documentElement.outerHTML;
   html = html.replace(/let runOrder += *[^;]+;/,
     'let runOrder   = ' + JSON.stringify(runOrder) + ';');
   html = html.replace(/let activeRuns += *[^;]+;/,

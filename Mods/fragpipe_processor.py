@@ -104,7 +104,7 @@ def _extract_run_names(df: pl.DataFrame) -> pl.DataFrame:
         return df
     df = df.with_columns(
         pl.col('Spectrum File')
-          .str.replace_all(r'\', '/', literal=False)
+          .str.replace_all(r'\\', '/', literal=False)
           .str.extract(r'([^/]+)$', group_index=1)          # filename only
           .str.replace(r'\.pep\.xml$', '', literal=False)   # strip .pep.xml
           .str.replace(r'\.[^./]+$', '', literal=False)     # strip remaining ext

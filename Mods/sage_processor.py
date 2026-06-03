@@ -119,7 +119,7 @@ def _extract_run_names(df: pl.DataFrame) -> pl.DataFrame:
         return df
     df = df.with_columns(
         pl.col('filename')
-          .str.replace_all(r'\', '/', literal=False)
+          .str.replace_all(r'\\', '/', literal=False)
           .str.extract(r'([^/]+)\.[^./]+$', group_index=1)
           .alias('Raw file')
     )
@@ -344,7 +344,7 @@ def _melt_lfq(lfq: pl.DataFrame) -> Optional[pl.DataFrame]:
     # Extract run name from column header (mzML filename → stem)
     melted = melted.with_columns(
         pl.col('_filename')
-          .str.replace_all(r'\', '/', literal=False)
+          .str.replace_all(r'\\', '/', literal=False)
           .str.extract(r'([^/]+)\.[^./]+$', group_index=1)
           .alias('Raw file')
     ).drop('_filename')

@@ -149,8 +149,7 @@ def main():
         engine, datas = next(iter(engine_groups.items()))
         data = _merge_data_dicts(datas)
 
-        print(f"
-Engine: {engine.upper()}")
+        print(f"\nEngine: {engine.upper()}")
         if len(datas) > 1:
             print(f"  Merged {len(datas)} folder(s)")
 
@@ -183,8 +182,7 @@ Engine: {engine.upper()}")
         from Mods.combined_processor import CombinedProcessor
 
         engines_str = ' + '.join(e.upper() for e in engine_groups)
-        print(f"
-Engines: {engines_str}")
+        print(f"\nEngines: {engines_str}")
 
         processors = []
         for engine, datas in engine_groups.items():

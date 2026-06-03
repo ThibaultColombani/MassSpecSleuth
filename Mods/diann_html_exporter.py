@@ -86,28 +86,22 @@ def export_html_report(processor: DiannProcessor, output_path: str) -> None:
     # ── Build HTML ───────────────────────────────────────────────────────────
     print(f"  [html] assembling HTML ({len(visible_tabs)} tabs)…")
 
-    tab_buttons = '
-'.join(
+    tab_buttons = '\n'.join(
         f'  <button class="tab{" active" if i == 0 else ""}" '
         f'onclick="showTab(\'{t.TAB_ID}\')">{t.TAB_LABEL}</button>'
         for i, t in enumerate(visible_tabs)
     )
 
-    tab_contents = '
-'.join(
-        f'<div id="{t.TAB_ID}" class="tab-content{" active" if i == 0 else ""}">
-'
-        f'{t.html_content(tab_data[t.TAB_ID])}
-</div>'
+    tab_contents = '\n'.join(
+        f'<div id="{t.TAB_ID}" class="tab-content{" active" if i == 0 else ""}">\n'
+        f'{t.html_content(tab_data[t.TAB_ID])}\n</div>'
         for i, t in enumerate(visible_tabs)
     )
 
-    tab_js = '
-'.join(t.javascript() for t in visible_tabs)
+    tab_js = '\n'.join(t.javascript() for t in visible_tabs)
 
     # init-tab dispatcher
-    init_cases = '
-'.join(
+    init_cases = '\n'.join(
         f'  if (name === "{t.TAB_ID}") init{_camel(t.TAB_ID)}();'
         for t in visible_tabs
         if t.TAB_ID != 'files'   # files tab has no lazy init

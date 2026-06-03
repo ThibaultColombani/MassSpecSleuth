@@ -114,7 +114,7 @@ def _merge_input_files(psms: pl.DataFrame,
                 .unique(subset=['__fid'])
                 .with_columns(
                     pl.col('__fname')
-                      .str.replace_all(r'\', '/', literal=False)
+                      .str.replace_all(r'\\', '/', literal=False)
                       .str.extract(r'([^/]+)$', group_index=1)
                       .str.replace(r'\.[^.]+$', '', literal=False)
                       .alias('__raw')
@@ -133,7 +133,7 @@ def _merge_input_files(psms: pl.DataFrame,
     if 'Spectrum File' in psms.columns:
         return psms.with_columns(
             pl.col('Spectrum File')
-              .str.replace_all(r'\', '/', literal=False)
+              .str.replace_all(r'\\', '/', literal=False)
               .str.extract(r'([^/]+)$', group_index=1)
               .str.replace(r'\.[^.]+$', '', literal=False)
               .alias('Raw file')
@@ -145,7 +145,7 @@ def _merge_input_files(psms: pl.DataFrame,
         if '_source_file' in psms.columns and psms['_source_file'].n_unique() > 1:
             stem_expr = (
                 pl.col('_source_file')
-                  .str.replace_all(r'\', '/', literal=False)
+                  .str.replace_all(r'\\', '/', literal=False)
                   .str.extract(r'([^/]+)\.[^./]+$', group_index=1)
                   .str.replace(r'_PSMs.*$', '', literal=False)
             )

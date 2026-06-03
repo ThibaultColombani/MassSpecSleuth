@@ -105,7 +105,7 @@ def _extract_run_names(df: pl.DataFrame) -> pl.DataFrame:
     # Works for both Unix (/a/b/name.mzML) and Windows paths (C:\a\b\name.mzML)
     df = df.with_columns(
         pl.col('file_name')
-          .str.replace_all(r'\', '/', literal=False)
+          .str.replace_all(r'\\', '/', literal=False)
           .str.extract(r'([^/]+)\.[^./]+$', group_index=1)
           .alias('Raw file')
     )
