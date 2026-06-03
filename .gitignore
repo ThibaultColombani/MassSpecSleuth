@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Output reports
+mss_report_*.html
+
+# Claude Code
+CLAUDE.md
+
+# Example data
+example/
+
+# macOS
+.DS_Store
