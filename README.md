@@ -74,13 +74,13 @@ The entry point of the report. Lists all input runs with their original filename
 
 High-level per-run counts at FDR ≤ 1%: unique sequence-charges, peptides, and protein groups. When `--enzyme` is passed, the peptide and seqcharge bars are broken down by C-terminal amino acid (R vs K for trypsin, etc.).
 
-| Chart | What it shows |
-|---|---|
-| Seqcharges per run | Unique sequence + charge combinations |
-| Peptide counts per run | Unique peptide sequences |
-| Protein groups per run | Unique protein groups |
-
-<img src="docs/screenshots/summary_peptide_counts.png" width="600" alt="Peptide counts per run">
+<table>
+<tr>
+  <td align="center"><b>Unique seqcharges</b><br><img src="docs/screenshots/summary_seqcharges.png" width="190" alt="Seqcharges per run"></td>
+  <td align="center"><b>Unique peptides</b><br><img src="docs/screenshots/summary_peptide_counts.png" width="190" alt="Peptide counts per run"></td>
+  <td align="center"><b>Protein groups</b><br><img src="docs/screenshots/summary_protein_groups.png" width="190" alt="Protein groups per run"></td>
+</tr>
+</table>
 
 ---
 
@@ -94,12 +94,22 @@ Deeper identification metrics, all filtered at the engine's primary quality scor
 
 **Peptide identifications & charge distribution** — unique seqcharges and peptides per run side by side, plus the charge state distribution (fraction of 2+, 3+, 4+ precursors).
 
-<img src="docs/screenshots/ids_peptide_counts.png" width="600" alt="Peptide counts and charge distribution">
-<img src="docs/screenshots/ids_charge_distribution.png" width="600" alt="Charge state distribution">
+<table>
+<tr>
+  <td align="center"><b>Seqcharges &amp; Precursors per run</b><br><img src="docs/screenshots/ids_peptide_counts.png" width="290" alt="Seqcharges and precursors per run"></td>
+  <td align="center"><b>Charge state distribution (PEP &lt; 0.01)</b><br><img src="docs/screenshots/ids_charge_distribution.png" width="290" alt="Charge state distribution"></td>
+</tr>
+</table>
 
 **Missed cleavages** — fraction of peptides with 0, 1, 2+ internal cleavage sites (inferred from sequence, engine-agnostic). Broken down by C-terminal amino acid when an enzyme is set.
 
-<img src="docs/screenshots/ids_missed_cleavages.png" width="600" alt="Missed cleavages">
+<table>
+<tr>
+  <td align="center"><b>All peptides</b><br><img src="docs/screenshots/ids_missed_cleavages.png" width="190" alt="Missed cleavages — all"></td>
+  <td align="center"><b>R-ending peptides</b><br><img src="docs/screenshots/ids_missed_cleavages_R.png" width="190" alt="Missed cleavages — R-ending"></td>
+  <td align="center"><b>K-ending peptides</b><br><img src="docs/screenshots/ids_missed_cleavages_K.png" width="190" alt="Missed cleavages — K-ending"></td>
+</tr>
+</table>
 
 **Protein identifications** — unique protein groups per run at four FDR stringencies (all PSMs, Q < 0.05, Q < 0.01, Q < 0.001), making it easy to spot runs with inflated or depleted ID counts.
 
@@ -163,9 +173,23 @@ Shown only for experiments using amine-reactive tags (PSMtag, TMT, mTRAQ, iTRAQ,
 
 <img src="docs/screenshots/labeling_counts.png" width="600" alt="Labeling counts">
 
-**MS1 intensity — fully labeled peptides** — log₁₀ MS1 intensity distribution for fully labeled precursors, mean ± SD per run. Right panel shows only precursors shared across all active runs.
+**Retention length — fully labeled peptides** — peak width FWHM (seconds) for fully labeled precursors, mean ± SD per run. Right panel: precursors shared across all active runs only.
 
-<img src="docs/screenshots/labeling_ms1_intensity.png" width="600" alt="MS1 intensity — labeled peptides">
+<table>
+<tr>
+  <td align="center"><b>All Fully Labeled Peptides</b><br><img src="docs/screenshots/labeling_fwhm.png" width="290" alt="FWHM — all fully labeled"></td>
+  <td align="center"><b>Intersected Fully Labeled Peptides</b><br><img src="docs/screenshots/labeling_fwhm_intersected.png" width="290" alt="FWHM — intersected"></td>
+</tr>
+</table>
+
+**MS1 intensity — fully labeled peptides** — log₁₀ MS1 intensity distribution for fully labeled precursors, mean ± SD per run. Right panel: precursors shared across all active runs only.
+
+<table>
+<tr>
+  <td align="center"><b>All Fully Labeled Peptides</b><br><img src="docs/screenshots/labeling_ms1_intensity.png" width="290" alt="MS1 intensity — all fully labeled"></td>
+  <td align="center"><b>Intersected Fully Labeled Peptides</b><br><img src="docs/screenshots/labeling_ms1_intensity_intersected.png" width="290" alt="MS1 intensity — intersected"></td>
+</tr>
+</table>
 
 **MS1 ratio — intersected fully labeled peptides** — log₂(sample / control) MS1 intensity ratio for labeled precursors shared across runs. Useful for spotting systematic loading differences.
 
@@ -179,8 +203,12 @@ Shown only for multiplexed experiments (PSMtag, TMT, mTRAQ, …). Covers per-cha
 
 **Identification counts** — unique precursors and protein groups per channel per run, with an "in all channels" intersection count.
 
-<img src="docs/screenshots/plex_ids.png" width="600" alt="Plex precursor IDs">
-<img src="docs/screenshots/plex_proteins.png" width="600" alt="Plex protein groups">
+<table>
+<tr>
+  <td align="center"><b>Precursor IDs per Channel</b><br><img src="docs/screenshots/plex_ids.png" width="290" alt="Precursor IDs per channel"></td>
+  <td align="center"><b>Protein Groups per Channel</b><br><img src="docs/screenshots/plex_proteins.png" width="290" alt="Protein groups per channel"></td>
+</tr>
+</table>
 
 **Channel Q-value distribution** — distribution of Channel Q-values per channel (DIA-NN / Jmod only). A tight distribution near 0 indicates confident channel-level assignments.
 
