@@ -80,7 +80,7 @@ High-level per-run counts at FDR ≤ 1%: unique sequence-charges, peptides, and 
 | Peptide counts per run | Unique peptide sequences |
 | Protein groups per run | Unique protein groups |
 
-![Peptide counts per run](docs/screenshots/summary_peptide_counts.png)
+<img src="docs/screenshots/summary_peptide_counts.png" width="600" alt="Peptide counts per run">
 
 ---
 
@@ -90,20 +90,20 @@ Deeper identification metrics, all filtered at the engine's primary quality scor
 
 **Precursor IDs** — precursors ranked by PEP/Q-value (ascending); cumulative count vs. score. Lets you compare score distributions across runs.
 
-![Cumulative precursor IDs](docs/screenshots/ids_cumulative_precursors.png)
+<img src="docs/screenshots/ids_cumulative_precursors.png" width="600" alt="Cumulative precursor IDs">
 
 **Peptide identifications & charge distribution** — unique seqcharges and peptides per run side by side, plus the charge state distribution (fraction of 2+, 3+, 4+ precursors).
 
-![Peptide counts and charge distribution](docs/screenshots/ids_peptide_counts.png)
-![Charge state distribution](docs/screenshots/ids_charge_distribution.png)
+<img src="docs/screenshots/ids_peptide_counts.png" width="600" alt="Peptide counts and charge distribution">
+<img src="docs/screenshots/ids_charge_distribution.png" width="600" alt="Charge state distribution">
 
 **Missed cleavages** — fraction of peptides with 0, 1, 2+ internal cleavage sites (inferred from sequence, engine-agnostic). Broken down by C-terminal amino acid when an enzyme is set.
 
-![Missed cleavages](docs/screenshots/ids_missed_cleavages.png)
+<img src="docs/screenshots/ids_missed_cleavages.png" width="600" alt="Missed cleavages">
 
 **Protein identifications** — unique protein groups per run at four FDR stringencies (all PSMs, Q < 0.05, Q < 0.01, Q < 0.001), making it easy to spot runs with inflated or depleted ID counts.
 
-![Protein IDs](docs/screenshots/ids_protein_ids.png)
+<img src="docs/screenshots/ids_protein_ids.png" width="600" alt="Protein IDs">
 
 ---
 
@@ -113,11 +113,11 @@ Per-run chromatography quality, shown in individual charts (one panel per run). 
 
 **Retention time distribution** — precursor count per 0.5-min RT bin, coloured by C-terminal amino acid. A flat, broad distribution indicates even sampling across the gradient; a spike at the void suggests gradient problems.
 
-![RT distribution](docs/screenshots/chrom_rt.png)
+<img src="docs/screenshots/chrom_rt.png" width="600" alt="RT distribution">
 
 **Peak width — FWHM** — distribution of chromatographic peak widths in seconds. Narrow, consistent peaks indicate good LC performance. Runs with broader or bimodal distributions flag gradient or column issues.
 
-![Peak width FWHM](docs/screenshots/chrom_fwhm.png)
+<img src="docs/screenshots/chrom_fwhm.png" width="600" alt="Peak width FWHM">
 
 ---
 
@@ -127,27 +127,27 @@ The most information-dense tab. Covers MS1 and MS2 intensity distributions, cros
 
 **MS1 intensity distribution** — log₁₀ MS1 area per run (full dynamic range, 50 bins). Overlapping peaks across runs indicate consistent ionisation efficiency.
 
-![MS1 intensity distribution](docs/screenshots/ion_ms1_distribution.png)
+<img src="docs/screenshots/ion_ms1_distribution.png" width="600" alt="MS1 intensity distribution">
 
 **MS1 — intersected precursors** — log₁₀ MS1 intensity for precursors detected in every active run. Coloured by C-terminal residue when an enzyme filter is set. Updates live as runs are toggled in the Files tab.
 
-![MS1 intersected](docs/screenshots/ion_ms1_intersected.png)
+<img src="docs/screenshots/ion_ms1_intersected.png" width="600" alt="MS1 intersected">
 
 **Normalized MS1 — intersected precursors** — log₂ fold-change of MS1 intensity vs. the first active run, for shared precursors. Axis fixed at [−3, +3]. A tight peak centred at 0 means stable ionisation across runs.
 
-![Normalized MS1](docs/screenshots/ion_ms1_normalized.png)
+<img src="docs/screenshots/ion_ms1_normalized.png" width="600" alt="Normalized MS1">
 
 **MS2 intensity distribution** — log₁₀ MS2 precursor quantity (Precursor.Quantity) per run.
 
-![MS2 intensity distribution](docs/screenshots/ion_ms2_distribution.png)
+<img src="docs/screenshots/ion_ms2_distribution.png" width="600" alt="MS2 intensity distribution">
 
 **MS2 intensity vs precursor m/z** — median log₁₀ MS2 intensity in 25-Da precursor m/z bins. Y-axis = m/z, X-axis = intensity. Systematic steps across the m/z range may reveal DIA window boundaries or instrument bias.
 
-![MS2 vs m/z profile](docs/screenshots/ion_ms2_mz_profile.png)
+<img src="docs/screenshots/ion_ms2_mz_profile.png" width="600" alt="MS2 vs m/z profile">
 
 **MS2/MS1 ratio — intersected precursors** — log₂(Precursor.Quantity / MS1 Intensity) for shared precursors. A narrow, stable distribution indicates consistent fragmentation efficiency across the run.
 
-![MS2/MS1 ratio](docs/screenshots/ion_ms2_ms1_ratio.png)
+<img src="docs/screenshots/ion_ms2_ms1_ratio.png" width="600" alt="MS2/MS1 ratio">
 
 ---
 
@@ -157,19 +157,19 @@ Shown only for experiments using amine-reactive tags (PSMtag, TMT, mTRAQ, iTRAQ,
 
 **Tag labeling efficiency** — percentage of N-terminally and Lys-labeled peptides, broken down per C-terminal residue (R-ending vs K-ending). Stacked bars show fully labeled, partly labeled (N-term only, one or more K missed), and unlabeled fractions. Individual or grouped view available.
 
-![Labeling efficiency](docs/screenshots/labeling_efficiency.png)
+<img src="docs/screenshots/labeling_efficiency.png" width="600" alt="Labeling efficiency">
 
 **Precursor counts** — total precursors per run and per residue, with fully- and partly-labeled breakdown.
 
-![Labeling counts](docs/screenshots/labeling_counts.png)
+<img src="docs/screenshots/labeling_counts.png" width="600" alt="Labeling counts">
 
 **MS1 intensity — fully labeled peptides** — log₁₀ MS1 intensity distribution for fully labeled precursors, mean ± SD per run. Right panel shows only precursors shared across all active runs.
 
-![MS1 intensity — labeled peptides](docs/screenshots/labeling_ms1_intensity.png)
+<img src="docs/screenshots/labeling_ms1_intensity.png" width="600" alt="MS1 intensity — labeled peptides">
 
 **MS1 ratio — intersected fully labeled peptides** — log₂(sample / control) MS1 intensity ratio for labeled precursors shared across runs. Useful for spotting systematic loading differences.
 
-![MS1 ratio](docs/screenshots/labeling_ratio.png)
+<img src="docs/screenshots/labeling_ratio.png" width="600" alt="MS1 ratio">
 
 ---
 
@@ -179,24 +179,24 @@ Shown only for multiplexed experiments (PSMtag, TMT, mTRAQ, …). Covers per-cha
 
 **Identification counts** — unique precursors and protein groups per channel per run, with an "in all channels" intersection count.
 
-![Plex precursor IDs](docs/screenshots/plex_ids.png)
-![Plex protein groups](docs/screenshots/plex_proteins.png)
+<img src="docs/screenshots/plex_ids.png" width="600" alt="Plex precursor IDs">
+<img src="docs/screenshots/plex_proteins.png" width="600" alt="Plex protein groups">
 
 **Channel Q-value distribution** — distribution of Channel Q-values per channel (DIA-NN / Jmod only). A tight distribution near 0 indicates confident channel-level assignments.
 
-![Channel Q-value](docs/screenshots/plex_qval.png)
+<img src="docs/screenshots/plex_qval.png" width="600" alt="Channel Q-value">
 
 **Relative channel intensity** — log₁₀ intensity of each sample channel relative to the highest-intensity (carrier) channel per run. Flat bars across channels indicate balanced loading.
 
-![Relative channel intensity](docs/screenshots/plex_relative_intensity.png)
+<img src="docs/screenshots/plex_relative_intensity.png" width="600" alt="Relative channel intensity">
 
 **MS2 intensity distribution** — log₁₀ MS2 (Precursor.Quantity) distribution per channel per run.
 
-![MS2 distribution per channel](docs/screenshots/plex_ms2_distribution.png)
+<img src="docs/screenshots/plex_ms2_distribution.png" width="600" alt="MS2 distribution per channel">
 
 **Data completeness — precursors (Jaccard)** — pairwise Jaccard overlap between sample channels (carrier excluded). High overlap means channels quantify the same set of precursors.
 
-![Jaccard precursor overlap](docs/screenshots/plex_jaccard_precursors.png)
+<img src="docs/screenshots/plex_jaccard_precursors.png" width="600" alt="Jaccard precursor overlap">
 
 ---
 
