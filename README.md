@@ -171,6 +171,14 @@ Per-run chromatography quality, one panel per run. A "samples per row" dropdown 
 
 <img src="docs/screenshots/ion_ms2_distribution.png" width="600" alt="MS2 intensity distribution">
 
+**MS2 Intensity – Intersected Precursors** — Log₁₀ MS2 precursor quantity for precursors detected in every active run, coloured by C-terminal residue. Updates live with run selection. Requires ≥2 active runs with ≥20 shared precursors.
+
+<img src="docs/screenshots/ion_ms2_intersected.png" width="600" alt="MS2 intersected">
+
+**Normalized MS2 Intensity – Intersected Precursors** — Log₂ fold-change of MS2 precursor quantity vs. the first active run, for intersected precursors. Axis fixed [−3, +3]. Updates live with run selection.
+
+<img src="docs/screenshots/ion_ms2_normalized.png" width="600" alt="Normalized MS2">
+
 **MS2 Intensity vs Precursor M/Z** — Median log₁₀ MS2 intensity (Precursor.Quantity) in 25-Da precursor m/z bins per run. Y-axis = precursor m/z; X-axis = log₁₀ intensity. Systematic shifts across the m/z range may reflect DIA window boundaries or instrument bias.
 
 <img src="docs/screenshots/ion_ms2_mz_profile.png" width="600" alt="MS2 vs m/z profile">
@@ -192,6 +200,10 @@ Shown only for experiments using amine-reactive tags (PSMtag, TMT, mTRAQ, iTRAQ,
 **Precursor Counts** — Total precursors and per-residue breakdown: total, fully labeled, partly labeled.
 
 <img src="docs/screenshots/labeling_counts.png" width="600" alt="Labeling counts">
+
+**Chromatography — Labeled Peptides** — Retention time distribution of labeled precursors per C-terminal residue per run (0.5-min bins, labeled = fully or partly).
+
+<img src="docs/screenshots/labeling_chrom_rt.png" width="600" alt="Chromatography — labeled peptides">
 
 **Retention Length — Fully Labeled Peptides** — Peak width FWHM (seconds) for fully labeled precursors. Mean ± SD per run. Right panel: precursors present in all active runs only.
 
@@ -238,10 +250,26 @@ Shown only for multiplexed experiments (PSMtag, TMT, mTRAQ, …).
 
 <img src="docs/screenshots/plex_relative_intensity.png" width="600" alt="Relative channel intensity">
 
+**MS1 Intensity Distribution** — log₁₀ MS1 intensity distribution per channel per run.
+
+<img src="docs/screenshots/plex_ms1_distribution.png" width="600" alt="MS1 distribution per channel">
+
+**MS1 Quantification Variability** — Median MS1 CV per channel per run (normalised by per-precursor mean across channels and by channel loading). Lower = more reproducible quantification across peptides within a protein group.
+
+<img src="docs/screenshots/plex_ms1_cv.png" width="600" alt="MS1 CV per channel">
+
 **MS2 Intensity Distribution** — log₁₀ MS2 (Precursor.Quantity) distribution per channel per run.
 
 <img src="docs/screenshots/plex_ms2_distribution.png" width="600" alt="MS2 distribution per channel">
 
+**MS2 Quantification Variability** — Median MS2 CV per channel per run using Precursor.Quantity (same normalisation as MS1). Lower = more reproducible MS2-based quantification.
+
+<img src="docs/screenshots/plex_ms2_cv.png" width="600" alt="MS2 CV per channel">
+
 **Data Completeness — Precursors** — Pairwise precursor overlap between sample channels (carrier excluded). Jaccard Index = |A∩B| / |A∪B|; higher = more shared precursors between channels.
 
 <img src="docs/screenshots/plex_jaccard_precursors.png" width="600" alt="Jaccard precursor overlap">
+
+**Data Completeness — Protein Groups** — Pairwise protein group overlap between sample channels (carrier excluded). Jaccard Index = |A∩B| / |A∪B|; higher = more shared protein identifications between channels.
+
+<img src="docs/screenshots/plex_jaccard_proteins.png" width="600" alt="Jaccard protein group overlap">
